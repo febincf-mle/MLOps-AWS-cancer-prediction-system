@@ -4,7 +4,7 @@ import logging
 
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-project_name = "cancer-prediction"
+project_name = "cancer_prediction"
 
 
 files_to_create = [
