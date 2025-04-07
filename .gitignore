@@ -5,6 +5,10 @@ __pycache__/
 
 # virtual environment
 .virtualenv/
+
+# artifacts directory
+artifacts/*
+
 # C extensions
 *.so
 
