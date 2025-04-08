@@ -4,7 +4,8 @@ from cancer_prediction.constants import *
 from cancer_prediction.utils import read_yaml, create_directories
 from cancer_prediction.entity.config_entity import (DataIngestionConfig, 
                                                     PrepareBaseModelConfig,
-                                                    ModelTrainerConfig
+                                                    ModelTrainerConfig,
+                                                    ModelEvaluationConfig
                                                     )
 
 
@@ -77,3 +78,19 @@ class ConfigurationManager:
         )
 
         return training_config_entity
+    
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        training_config = self.config.training
+        data_ingestion_config = self.config.data_ingestion
+
+        eval_config = ModelEvaluationConfig(
+            path_of_model=Path(training_config.trained_model_path),
+            training_data=os.path.join(data_ingestion_config.unzip_dir, 'data', 'chest-ct-scan-data'),
+            mlflow_uri=None,
+            all_params=self.params,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_batch_size=self.params.BATCH_SIZE
+        )
+
+        return eval_config
