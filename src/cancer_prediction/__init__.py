@@ -4,7 +4,10 @@ import logging
 
 
 log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
 log_filepath = os.path.join(log_dir, "logs.log")
+
+print(log_filepath)
 
 logging.basicConfig(
     level=logging.INFO, 
@@ -12,7 +15,7 @@ logging.basicConfig(
     
     handlers = [
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("logs.log")
+        logging.FileHandler(log_filepath)
     ]
 )
 

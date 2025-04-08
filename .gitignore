@@ -9,6 +9,9 @@ __pycache__/
 # artifacts directory
 artifacts/*
 
+# logs 
+logs/
+
 # C extensions
 *.so
 

@@ -2,8 +2,8 @@ import os
 import gdown
 import zipfile
 
-from src.cancer_prediction import logger
-from src.cancer_prediction.entity.config_entity import DataIngestionConfig
+from cancer_prediction import logger
+from cancer_prediction.entity.config_entity import DataIngestionConfig
 
 
 class DataIngestion:

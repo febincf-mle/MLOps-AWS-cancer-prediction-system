@@ -5,7 +5,7 @@ import base64
 from pathlib import Path
 from typing import Any
 
-from src.cancer_prediction import logger
+from cancer_prediction import logger
 
 import joblib
 from box.exceptions import BoxValueError
